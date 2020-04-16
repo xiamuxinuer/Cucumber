@@ -31,6 +31,13 @@ public class LoginStepDefinitions {
         loginPage.login("storemanager85","UserUser123");
     }
 
+    @When("user logs in as a driver")
+    public void user_logs_in_as_a_driver() {
+        System.out.println(" login as driver");
+        loginPage.login(ConfigurationReader.getProperty("driver"),ConfigurationReader.getProperty("password"));
+    }
+
+
 
     @Then("user should verify that title is a Dashboard")
     public void user_should_verify_that_title_is_a_Dashboard() {
