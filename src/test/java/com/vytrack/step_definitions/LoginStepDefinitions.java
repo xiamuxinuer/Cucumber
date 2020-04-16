@@ -43,8 +43,6 @@ public class LoginStepDefinitions {
     public void user_should_verify_that_title_is_a_Dashboard() {
         System.out.println("verify that title is a Dashboard");
         Assert.assertEquals(Driver.getDriver().getTitle(),"Dashboard");
-        Driver.closeDriver();
-
     }
 
 }

@@ -3,3 +3,5 @@
 [0414/150204.133:ERROR:file_io_win.cc(179)] CreateFile C:\Users\akbar\AppData\Local\Temp\scoped_dir12920_1088896252\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
 [0415/191335.405:ERROR:file_io_win.cc(179)] CreateFile C:\Users\akbar\AppData\Local\Temp\scoped_dir8056_902566410\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
 [0415/192702.360:ERROR:file_io_win.cc(179)] CreateFile C:\Users\akbar\AppData\Local\Temp\scoped_dir2480_1518590795\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
+[0415/202321.735:ERROR:file_io_win.cc(179)] CreateFile C:\Users\akbar\AppData\Local\Temp\scoped_dir14564_683344539\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)
+[0415/202353.253:ERROR:file_io_win.cc(179)] CreateFile C:\Users\akbar\AppData\Local\Temp\scoped_dir3008_938239130\Crashpad\settings.dat: The process cannot access the file because it is being used by another process. (0x20)

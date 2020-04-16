@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
         features = "src\\test\\resources\\features",
         dryRun = false,
         strict = true,
-        tags  ="@sales_manager"
+        tags  ="",
+        plugin = "html:target\\cucumber-html-report"
 )
 public class CucumberRunner {
 
