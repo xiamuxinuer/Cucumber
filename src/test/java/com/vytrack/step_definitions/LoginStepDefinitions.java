@@ -1,12 +1,15 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.pages.LoginPage;
+import com.vytrack.pages.activities.CalendarEventsPage;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+
+import java.util.concurrent.Callable;
 
 public class LoginStepDefinitions {
 
@@ -50,4 +53,26 @@ public class LoginStepDefinitions {
         Assert.assertEquals(Driver.getDriver().getTitle(),"Dashboard");
     }
 
-}
+    @When("user navigates to {string} and {string}")
+    public void user_navigates_to_and(String tab, String module) throws InterruptedException {
+        System.out.println("user navigates to "+tab+" "+module+" page");
+        CalendarEventsPage calendarEventsPage=new CalendarEventsPage();
+        calendarEventsPage.navigateTo(tab,module);
+    }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+

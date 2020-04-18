@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends AbstractPageBase{
     @FindBy(id = "prependedInput")
     private WebElement username;
 
@@ -26,9 +26,7 @@ public class LoginPage {
     private WebElement warningMessage;
 
 
-    public LoginPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+
 
 
     public void login(String usernameValue, String passwordValue) {

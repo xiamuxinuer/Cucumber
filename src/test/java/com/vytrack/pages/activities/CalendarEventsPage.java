@@ -48,15 +48,20 @@ public class CalendarEventsPage extends AbstractPageBase {
     @FindBy(xpath = "//label[text()='Description']/following-sibling::div//div")
     private WebElement generalInfoDescription;
 
+    @FindBy(xpath = "(//h1)[2]")
+    private WebElement subtitle;
+
     public void enterCalendarEventTitle(String titleValue) {
         BrowserUtilities.waitForPageToLoad(20);
         wait.until(ExpectedConditions.visibilityOf(title)).sendKeys(titleValue);
+        wait.until(ExpectedConditions.attributeToBe(title, "value", titleValue));
     }
 
     public void enterCalendarEventDescription(String description) {
         //wait until frame is available and switch to it
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(descriptionFrame));
         descriptionTextArea.sendKeys(description);
+        wait.until(ExpectedConditions.textToBePresentInElement(descriptionTextArea, description));
         driver.switchTo().defaultContent();//exit from the frame
     }
 
@@ -107,7 +112,9 @@ public class CalendarEventsPage extends AbstractPageBase {
         BrowserUtilities.waitForPageToLoad(20);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[title='Create Calendar event']")));
         wait.until(ExpectedConditions.elementToBeClickable(createCalendarEvent)).click();
-        BrowserUtilities.waitForPageToLoad(20);
+        //BrowserUtilities.waitForPageToLoad(20);
+        BrowserUtilities.wait(2);
+
     }
 
     public String getStartDate() {
@@ -116,4 +123,14 @@ public class CalendarEventsPage extends AbstractPageBase {
         BrowserUtilities.scrollTo(startDate);
         return startDate.getAttribute("value");
     }
+
+    public String getSubTitle(){
+        BrowserUtilities.waitForPageToLoad(20);
+        wait.until(ExpectedConditions.visibilityOf(subtitle));
+        BrowserUtilities.wait(1);
+        return subtitle.getText();
+    }
+
+
+
 }
