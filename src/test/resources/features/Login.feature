@@ -1,3 +1,4 @@
+@login
 Feature: login
   As user,I want to be able to login with username and password
 
