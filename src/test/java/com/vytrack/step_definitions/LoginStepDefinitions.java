@@ -38,6 +38,11 @@ public class LoginStepDefinitions {
     }
 
 
+    @When("user enters {string} username and {string} password")
+    public void user_enters_username_and_password(String string, String string2) {
+        System.out.println("login with parameter");
+       loginPage.login(string,string2);
+    }
 
     @Then("user should verify that title is a Dashboard")
     public void user_should_verify_that_title_is_a_Dashboard() {

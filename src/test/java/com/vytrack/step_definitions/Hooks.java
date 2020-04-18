@@ -1,5 +1,6 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.utilities.BrowserUtilities;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -10,6 +11,7 @@ public class Hooks {
     public void setUp(){
         System.out.println("test setup");
         Driver.getDriver().manage().window().maximize();
+        BrowserUtilities.waitForPageToLoad(20);
     }
 
 
