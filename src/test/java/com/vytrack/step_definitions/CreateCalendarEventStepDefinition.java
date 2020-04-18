@@ -4,6 +4,8 @@ import com.vytrack.pages.activities.CalendarEventsPage;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
+import java.util.Map;
+
 public class CreateCalendarEventStepDefinition {
 
     CalendarEventsPage calendarEventsPage=new CalendarEventsPage();
@@ -48,6 +50,21 @@ calendarEventsPage.enterCalendarEventDescription(description);
     }
 
 
+    @Then("user enters new calendar event information:")
+    public void user_enters_new_calendar_event_information(Map<String,String> dataTable) {
+        System.out.println("user enters title and description");
+        calendarEventsPage.enterCalendarEventDescription(dataTable.get("description"));
+        calendarEventsPage.enterCalendarEventTitle(dataTable.get("title"));
+
+    }
+
+    @Then("user verifies that new calendar event was created successfully")
+    public void user_verifies_that_new_calendar_event_was_created_successfully(Map<String,String> dataTable) {
+        System.out.println("user verify title and description");
+        Assert.assertEquals(calendarEventsPage.getGeneralInfoTitleText(),dataTable.get("title"));
+        Assert.assertEquals(calendarEventsPage.getGeneralInfoDescriptionText(),dataTable.get("description"));
+
+    }
 
 
 
