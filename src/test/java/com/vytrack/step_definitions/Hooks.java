@@ -4,6 +4,9 @@ import com.vytrack.utilities.BrowserUtilities;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
 
@@ -26,7 +29,12 @@ public class Hooks {
     }
 
     @After
-    public void  tearDown(){
+    public void  tearDown(Scenario scenario){
+        if (scenario.isFailed()){
+            TakesScreenshot takesScreenshot= (TakesScreenshot) Driver.getDriver();
+            byte[] image=  takesScreenshot.getScreenshotAs(OutputType.BYTES);
+            scenario.embed(image,"image/png",scenario.getName());
+        }
         System.out.println("test clean up");
         Driver.closeDriver();
     }
