@@ -39,8 +39,7 @@ public class CalendarEventsPage extends AbstractPageBase {
     @FindBy(id = "tinymce")
     private WebElement descriptionTextArea;
 
-    @FindBy(css = "[class='btn-group pull-right'] > button")
-    private WebElement saveAndClose;
+
 
     @FindBy(xpath = "(//div[@class='control-label'])[1]")
     private WebElement generalInfoTitle;

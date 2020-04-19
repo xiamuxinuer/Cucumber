@@ -26,6 +26,16 @@ public class VehiclesPage extends AbstractPageBase {
     @FindBy (xpath = "(//button[@type='submit'])[1]")
     private WebElement submit;
 
+//    @FindBy(xpath = "//label[text()=‘License Plate’]/following-sibling::div/div")
+//    private WebElement actualLicensePlate;
+
+    public String getCarGeneralInfo(String parameter) {
+        String xpath = "//label[text()='" + parameter + "']/following-sibling::div/div";
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+        return driver.findElement(By.xpath(xpath)).getText().trim();
+    }
+
+
 
 
     public void clickToCreateCar(){
