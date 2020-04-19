@@ -14,7 +14,7 @@ Feature: create new calendar even
     And user verifies that description of new calender event is "Discuss what went will,what went wrong"
     And user verifies that title of new calender event is "Sprint Retro"
 
-@create_calendarEvent_data_table
+  @create_calendarEvent_data_table
   Scenario: Create new calendar event as sales manager with data table
 
     Given user is on the login page
@@ -22,11 +22,11 @@ Feature: create new calendar even
     And user navigates to "Activities" and "Calendar Events"
     Then user clicks on create calendar event button
     And  user enters new calendar event information:
-    |description|Discuss what went will,what went wrong|
-    |title      |Sprint Retro                          |
-  Then user clicks on save and close button
-  And user verifies that new calendar event was created successfully
-    |description|Discuss what went will,what went wrong|
-    |title      |Sprint Retro                          |
+      | description | Discuss what went will,what went wrong |
+      | title       | Sprint Retro                           |
+    Then user clicks on save and close button
+    And user verifies that new calendar event was created successfully
+      | description | Discuss what went will,what went wrong |
+      | title       | Sprint Retro                           |
 
 
