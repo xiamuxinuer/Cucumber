@@ -1,6 +1,7 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.pages.activities.CalendarEventsPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
@@ -16,13 +17,14 @@ public class CreateCalendarEventStepDefinitions {
         calendarEventsPage.clickToCreateCalendarEvent();
     }
 
-    @Then("user enters {string} as a title")
+    @Then("user enters {string} as title")
     public void user_enters_as_a_title(String string) {
         System.out.println("User enters title: " + string);
         calendarEventsPage.enterCalendarEventTitle(string);
     }
 
-    @Then("user enters {string} as a description")
+
+    @Then("user enters {string} as description")
     public void user_enters_as_a_description(String string) {
         System.out.println("User enters description: " + string);
         calendarEventsPage.enterCalendarEventDescription(string);
@@ -34,12 +36,12 @@ public class CreateCalendarEventStepDefinitions {
         calendarEventsPage.clickOnSaveAndClose();
     }
 
-    @Then("user verifies that description of new calendar event is {string}")
+    @Then("user verifies that description of new calender event is {string}")
     public void user_verifies_that_description_of_new_calendar_event_is(String string) {
         Assert.assertEquals(string, calendarEventsPage.getGeneralInfoDescriptionText());
     }
 
-    @Then("user verifies that title of new calendar event is {string}")
+    @Then("user verifies that title of new calender event is {string}")
     public void user_verifies_that_title_of_new_calendar_event_is(String string) {
         Assert.assertEquals(string, calendarEventsPage.getGeneralInfoTitleText());
     }
@@ -53,13 +55,11 @@ public class CreateCalendarEventStepDefinitions {
         calendarEventsPage.enterCalendarEventTitle(dataTable.get("title"));
     }
 
-    @Then("user verifies new calendar event was created successfully")
+    @Then("user verifies that new calendar event was created successfully")
     public void user_verifies_new_calendar_event_was_created_successfully(Map<String, String> dataTable) {
         Assert.assertEquals(dataTable.get("description"), calendarEventsPage.getGeneralInfoDescriptionText());
         Assert.assertEquals(dataTable.get("title"), calendarEventsPage.getGeneralInfoTitleText());
     }
-
-
 
 
 

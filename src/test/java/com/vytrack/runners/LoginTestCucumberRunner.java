@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src\\test\\resources\\features",
         dryRun = false,
         strict = true,
-        tags  ="@create_calendarEvent_data_table",
+        tags  ="@Create_car",
         plugin = {"html:target\\default-report",
         "json:target\\cucumber1.json"}
 )

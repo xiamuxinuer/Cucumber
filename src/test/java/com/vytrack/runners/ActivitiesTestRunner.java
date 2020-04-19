@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
         features = "src\\test\\resources\\features\\Activities",
         dryRun = false,
         strict = true,
-        tags  ="@View_Calendar_Event",
+        tags  ="",
         plugin = {"html:target\\default-report",
-                "json:target\\cucumber.json"}
+                "json:target\\cucumber2.json"}
 )
 
 public class ActivitiesTestRunner {
