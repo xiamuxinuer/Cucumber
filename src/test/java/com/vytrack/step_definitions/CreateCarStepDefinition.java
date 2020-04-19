@@ -18,7 +18,15 @@ public class CreateCarStepDefinition {
 
     @Then("user creates a car with following info:")
     public void user_creates_a_car_with_following_info(List<Map<String,String>> dataTable) {
+        System.out.println("user enters new car information");
 
+        vehiclesPage.setLicencePlateInput(dataTable.get(0).get("License Plate"));
+        vehiclesPage.setDriverInput(dataTable.get(0).get("Driver"));
+        vehiclesPage.setLocationInput(dataTable.get(0).get("Location"));
+        vehiclesPage.setModelYear(dataTable.get(0).get("Model Year"));
+        vehiclesPage.setColor(dataTable.get(0).get("Color"));
+        vehiclesPage.submit();
+        System.out.println("click save and close");
 
 
     }
