@@ -40,7 +40,9 @@ public abstract class AbstractPageBase {
     }
 
 
-
+public String getCurrentUser(){
+        return currentUser.getText();
+}
 
 
 
