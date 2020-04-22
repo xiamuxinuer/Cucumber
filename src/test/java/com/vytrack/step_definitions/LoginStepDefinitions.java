@@ -68,6 +68,17 @@ public class LoginStepDefinitions {
     }
 
 
+    @When("logs in as {string}")
+    public void logs_in_as(String string) {
+        loginPage.login(string);
+    }
+
+    @Then("user verifies that page title is {string}")
+    public void user_verifies_that_page_title_is(String string) {
+        System.out.println("verify that page title is: "+ string);
+
+        Assert.assertEquals(string,Driver.getDriver().getTitle());
+    }
 
 
 
