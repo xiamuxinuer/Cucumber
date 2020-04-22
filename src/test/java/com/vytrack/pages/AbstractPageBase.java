@@ -41,18 +41,20 @@ public abstract class AbstractPageBase {
         BrowserUtilities.wait(3);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("[class*='loader-mask']")));
 
-
-
-
-
     }
-
+    public void waitForLoaderMask() {
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("[class*='loader-mask']")));
+    }
 
 public String getCurrentUser(){
         return currentUser.getText();
 }
 
-
+    public void clickOnSaveAndClose() {
+        BrowserUtilities.wait(3);
+        wait.until(ExpectedConditions.elementToBeClickable(saveAndClose)).click();
+        waitForLoaderMask();
+    }
 
 
 }

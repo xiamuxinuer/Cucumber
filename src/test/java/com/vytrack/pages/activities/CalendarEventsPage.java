@@ -79,10 +79,7 @@ public class CalendarEventsPage extends AbstractPageBase {
         driver.switchTo().defaultContent();//exit from the frame
     }
 
-    public void clickOnSaveAndClose() {
-        BrowserUtilities.wait(3);
-        wait.until(ExpectedConditions.elementToBeClickable(saveAndClose)).click();
-    }
+
 
     public String getGeneralInfoTitleText() {
         BrowserUtilities.waitForPageToLoad(20);
