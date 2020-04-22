@@ -25,8 +25,8 @@ Feature: Login tests with scenario outline
       | store manager | Fleet      | Vehicles Model  | All - Vehicles Model - Entities - System - Car - Entities - System |
       | store manager | Customers  | Accounts        | All - Accounts - Customers                                         |
       | store manager | Customers  | Contacts        | All - Contacts - Customers                                         |
-      | store manager | Activities | Calendar Events | All - Calendar Events - Activities                                 |
-      | store manager | System     | Jobs            | All - Jobs - System                                                |
+      | store manager | Activities | Calendar Events | Calendar Events - Activities                                 |
+      | store manager | System     | Jobs            | Jobs - System                                                |
 
 
 
