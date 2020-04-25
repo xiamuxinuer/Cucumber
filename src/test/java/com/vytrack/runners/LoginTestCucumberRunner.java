@@ -10,9 +10,10 @@ import org.junit.runner.RunWith;
         features = "src\\test\\resources\\features",
         dryRun = false,
         strict = true,
-        tags  ="@smoke_test",
+        tags  ="@driver",
         plugin = {"html:target\\default-report",
-        "json:target\\cucumber1.json"}
+        "json:target\\cucumber1.json",
+        "rerun:target\\rerun.txt"}
 )
 public class LoginTestCucumberRunner {
 
