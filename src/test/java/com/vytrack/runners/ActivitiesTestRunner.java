@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         tags  ="@View_Calendar_Event",
         plugin = {"html:target\\default-report",
                 "json:target\\cucumber2.json",
-                "rerun:target\\rerun.txt"}
+                "rerun:target\\rerun_activitiesTest.txt"}
 )
 
 public class ActivitiesTestRunner {
