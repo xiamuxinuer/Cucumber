@@ -61,7 +61,9 @@ public class CalendarEventsPage extends AbstractPageBase {
     public List<String> getViewPerPageOptions() {
         BrowserUtilities.waitForPageToLoad(20);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[title='Create Calendar event']")));
+        BrowserUtilities.wait(2);
         viewPerPageToggle.click();
+        BrowserUtilities.wait(3);
         return BrowserUtilities.getTextFromWebElements(viewPerPageElements);
     }
 
