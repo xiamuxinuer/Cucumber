@@ -46,7 +46,7 @@ public class Driver {
                     break;
                 case "chromeheadless":
                     //to run chrome without interface (headless mode)
-                    WebDriverManager.chromedriver().version("79").setup();
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
                     options.setHeadless(true);
                     driverPool.set(new ChromeDriver(options));
@@ -54,7 +54,7 @@ public class Driver {
 
                 case "chrome-remote":
                     try{
-                    URL url=new URL("http://54.92.182.52:4444/wd/hub");
+                    URL url=new URL("http://18.206.255.232:4444/wd/hub");
                     DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                     desiredCapabilities.setBrowserName(BrowserType.CHROME);
                     desiredCapabilities.setPlatform(Platform.ANY);
@@ -90,14 +90,14 @@ public class Driver {
             //specify browser type in configuration.properties file
             switch (browser) {
                 case "chrome":
-                    WebDriverManager.chromedriver().version("79").setup();
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--start-maximized");
                     driverPool.set(new ChromeDriver(chromeOptions));
                     break;
                 case "chromeheadless":
                     //to run chrome without interface (headless mode)
-                    WebDriverManager.chromedriver().version("79").setup();
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
                     options.setHeadless(true);
                     driverPool.set(new ChromeDriver(options));
